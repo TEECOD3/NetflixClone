@@ -52,31 +52,6 @@ This project is a Netflix clone built using Next.js, Tailwind CSS, Prisma, Shadc
 5. **Real-time Updates:**
    - Superbase enables real-time updates to keep the application dynamic.
 
-## Deployment:
-
-The application is deployed on Vercel, ensuring fast and reliable hosting.
-
-### Project Structure:
-
-- **`pages/`:**
-
-  - Next.js pages for routing and views.
-
-- **`styles/`:**
-
-  - Tailwind CSS stylesheets for styling components.
-
-- **`components/`:**
-
-  - Reusable components for a modular and maintainable codebase.
-
-- **`prisma/`:**
-
-  - Prisma configuration and database schema.
-
-- **`public/`:**
-  - Static assets like images and icons.
-
 ### How to Run Locally:
 
 1. Clone the repository:
