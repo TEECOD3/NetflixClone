@@ -4,13 +4,21 @@ import Link from "next/link";
 import React from "react";
 import GithubSignInButton from "@/app/components/GithubSignInButton";
 import GoogleSignInButton from "@/app/components/GoogleSignInButton";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/Utils/auth";
+import { redirect } from "next/navigation";
 
 type Props = {};
 
-const Login = (props: Props) => {
+const Login = async (props: Props) => {
+  const session = await getServerSession(authOptions);
+
+  if (session) {
+    redirect("/Home");
+  }
   return (
     <div className="mt-24 rounded bg-black/80 py-10 px-6 md:pt-10 md:max-w-sm md:px-14 md:mt-0">
-      <form>
+      <form method="post " action="api/auth/signin">
         <h1 className="font-semibold text-3xl text-white">Login</h1>
 
         <div className="space-y-4 mt-5">
