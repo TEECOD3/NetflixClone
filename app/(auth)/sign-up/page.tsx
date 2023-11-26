@@ -19,7 +19,7 @@ const Signup = async (props: Props) => {
     redirect("/Home");
   }
   return (
-    <div className="mt-24 rounded bg-black/80 py-10 px-6 md:pt-10 md:max-w-sm md:px-14 md:mt-0">
+    <div className="mt-24 rounded bg-black/80 max-lg:py-32 py-10 px-6 md:pt-10 md:max-w-sm md:px-14 md:mt-0">
       <form method="post " action="api/auth/signin">
         <h1 className="font-semibold text-3xl text-white">Signup</h1>
         <div className="space-y-4 mt-5">

@@ -23,10 +23,10 @@ const links: linkprops[] = [
 const Navbar = (props: Props) => {
   const pathname = usePathname();
   return (
-    <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-6 py-5 lg:px-8 ">
+    <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-6 py-5 lg:px-8 max-lg:mb-10">
       <div className="flex items-center">
         <Link href="/Home" className="w-32">
-          <Image src={logo} alt="netflix logo" priority />
+          <Image src={logo} alt="netflixlogo" priority />
         </Link>
 
         <ul className="lg:flex gap-x-4 ml-14 hidden">
