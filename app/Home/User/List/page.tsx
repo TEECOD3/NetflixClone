@@ -33,7 +33,7 @@ const getdata = async (userid: string) => {
 type Props = {};
 
 const WatchList = async (props: Props) => {
-  const session = getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
   const data = await getdata(session?.user?.email as string);
 
   return (
