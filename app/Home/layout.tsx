@@ -9,12 +9,6 @@ type Props = {
 };
 
 const Homelayout = async ({ children }: Props) => {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    redirect("/login");
-  }
-
   return (
     <>
       <Navbar />
