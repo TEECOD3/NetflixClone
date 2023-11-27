@@ -1,11 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Heart, PlayCircle } from "lucide-react";
+import { Heart, HeartIcon, PlayCircle } from "lucide-react";
 import React, { useState } from "react";
 import PlayVideoModal from "./PlayVideoModal";
 import { addtowatchlist, deletefromwatchlist } from "../action";
 import { usePathname } from "next/navigation";
-import { FaHeart } from "react-icons/fa";
 
 interface iAppsProps {
   title: string;
@@ -47,7 +46,7 @@ const MovieCard = ({
             <input type="hidden" name="Watchlistid" value={Watchlistid} />
             <input type="hidden" name="pathname" value={pathname} />
             <Button variant="outline" size="icon">
-              <FaHeart
+              <HeartIcon
                 className=" w-4 h-4  transition-colors duration-200 ease-in-out "
                 color="red"
               />
