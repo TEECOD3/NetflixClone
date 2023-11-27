@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import PlayVideoModal from "./PlayVideoModal";
 import { addtowatchlist, deletefromwatchlist } from "../action";
 import { usePathname } from "next/navigation";
-import { IoIosHeart } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
 
 interface iAppsProps {
   title: string;
@@ -47,7 +47,7 @@ const MovieCard = ({
             <input type="hidden" name="Watchlistid" value={Watchlistid} />
             <input type="hidden" name="pathname" value={pathname} />
             <Button variant="outline" size="icon">
-              <IoIosHeart
+              <FaHeart
                 className=" w-4 h-4  transition-colors duration-200 ease-in-out "
                 color="red"
               />
