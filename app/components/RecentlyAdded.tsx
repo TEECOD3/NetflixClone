@@ -44,10 +44,10 @@ const RecentlyAdded = async (props: Props) => {
             alt="Movie"
             width={500}
             height={400}
-            className="rounded-sm absolute w-full h-full object-cover"
+            className="rounded-sm absolute w-full h-full object-cover brightness-50"
           ></Image>
 
-          <div className="h-60 relative w-full ease-in-out cursor-pointer transform transition z-10 duration-500 hover:scale-125 opacity-0 hover:opacity-100">
+          <div className="h-60 relative w-full ease-in-out cursor-pointer transform transition z-10 duration-500  hover:scale-105 lg:hover:scale-125  opacity-0 hover:opacity-100">
             <div className="bg-gradient-to-b from-transparent via-black/50 to-black z-10 w-full h-full rounded-lg flex items-center justify-center border">
               <Image
                 src={movie.imageString}

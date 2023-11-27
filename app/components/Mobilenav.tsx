@@ -13,23 +13,16 @@ interface linkprops {
   href: string;
 }
 const links: linkprops[] = [
-  { name: "Home", href: "/Home" },
   { name: "Tv Shows", href: "/Home/Shows" },
   { name: "Movies", href: "/Home/Movies" },
-  { name: "Recently Added", href: "/Home/RecentlyAdded" },
-  { name: "My List", href: "/Home/User/List" },
 ];
 
-const Navbar = (props: Props) => {
+const Mobilenav = (props: Props) => {
   const pathname = usePathname();
   return (
-    <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-6 py-5 lg:px-8 max-lg:mb-10">
+    <div className="w-full lg:hidden mx-auto flex items-center justify-between  sm:px-6  lg:px-8 max-lg:mb-2">
       <div className="flex items-center">
-        <Link href="/Home" className="w-32">
-          <Image src={logo} alt="netflixlogo" priority />
-        </Link>
-
-        <ul className="lg:flex gap-x-4 ml-14 hidden">
+        <ul className="flex gap-x-4">
           {links.map((link, idx) => (
             <div key={idx}>
               {pathname === link.href ? (
@@ -55,19 +48,8 @@ const Navbar = (props: Props) => {
           ))}
         </ul>
       </div>
-      <div className="flex items-center gap-x-8 ">
-        <Search className="w-5 h-5 text-gray-300 cursor-pointer hidden md:inline-block" />
-        <Bell className="h-5 w-g text-gray-300 cursor-pointer hidden md:inline-block" />
-        <Link
-          href="/Home/User/List"
-          className="text-gray-300 lg:hidden font-normal text-sm hover:underline cursor-pointer capitalize Hover:underline-offset-6"
-        >
-          MyList
-        </Link>
-        <UserNav />
-      </div>
     </div>
   );
 };
 
-export default Navbar;
+export default Mobilenav;

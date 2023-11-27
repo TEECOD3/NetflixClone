@@ -10,30 +10,32 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 import React from "react";
 
 type Props = {};
 
 const UserNav = (props: Props) => {
+  const session = useSession();
   return (
     <DropdownMenu>
-      {" "}
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-10 w-10 relative rounded-sm">
-          <Avatar className="h-10 w-10 rounded-sm">
-            <AvatarImage src="https://trnyrmqxgpsmhxpvbwdr.supabase.co/storage/v1/object/public/user%20image/avatar.png" />
-            <AvatarFallback className="rounded-sm ">Jan</AvatarFallback>
+          <Avatar className="h-10 w-10 rounded-full">
+            <AvatarImage src={session.data?.user?.image as string} />
+            <AvatarFallback className="rounded-sm ">user</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel>
           <div className="flex flex-col gap-y-1">
-            <p className="text-sm font-medium leading-none">jan</p>
+            <p className="text-sm font-medium leading-none">
+              {session.data?.user?.name}
+            </p>
             <p className="text-xs leading-none text-muted-foreground">
-              @gmail.com
+              {session.data?.user?.email}
             </p>
           </div>
         </DropdownMenuLabel>

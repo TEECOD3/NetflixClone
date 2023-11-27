@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import PlayVideoModal from "./PlayVideoModal";
 import { addtowatchlist, deletefromwatchlist } from "../action";
 import { usePathname } from "next/navigation";
+import { IoIosHeart } from "react-icons/io";
 
 interface iAppsProps {
   title: string;
@@ -40,13 +41,16 @@ const MovieCard = ({
         <PlayCircle className="h-12 w-12" />
       </button>
 
-      <div className="right-5 top-5 absolute z-10 ">
+      <div className="right-5 top-5 absolute z-[14] ">
         {WatchList ? (
           <form action={deletefromwatchlist}>
             <input type="hidden" name="Watchlistid" value={Watchlistid} />
             <input type="hidden" name="pathname" value={pathname} />
             <Button variant="outline" size="icon">
-              <Heart className="text-red-400 w-4 h-4 " />
+              <IoIosHeart
+                className=" w-4 h-4  transition-colors duration-200 ease-in-out "
+                color="red"
+              />
             </Button>
           </form>
         ) : (
